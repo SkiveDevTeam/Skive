@@ -10,25 +10,25 @@ function Login() {
 
   const login = () => {
     console.log(username, password);
-      fetch('/login', {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          username: username,
-          password: password,
-        }),
+    fetch('/login', {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username: username,
+        password: password,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Successful login:', data);
+        localStorage.setItem('userId', data.username);
+        navigate('/chatroom');
       })
-        .then((response) => response.json())
-        .then((data) => {
-          console.log('Successful login:', data);
-          localStorage.setItem('userId', data.username);
-          navigate('/chatroom');
-        })
-        .catch((error) => {
+      .catch((error) => {
         console.log('Error: ', error);
-        });
+      });
   };
 
   return (
@@ -58,8 +58,8 @@ function Login() {
         />{' '}
       </Box>
       <br></br>
-      <Button 
-        onClick={login} 
+      <Button
+        onClick={login}
         variant='contained'>
         {' '}
         Log In

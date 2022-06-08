@@ -1,15 +1,11 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 
+const Message = ({ index, message, username }) => {
 
-const Message = ({index, msg, username}) => {
-  // useEffect(() => {
-
-  // });
   return (
     <>
       <li key={index}>
-        {username}: {msg}
+        {username}: {message}
       </li>
     </>
   );

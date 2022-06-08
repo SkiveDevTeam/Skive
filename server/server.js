@@ -1,14 +1,32 @@
 const express = require('express');
 const PORT = 3000;
+const SOCKET_PORT = 3036;
 const app = express();
 const path = require('path');
 const cookieParser = require('cookie-parser');
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, '../index.html')));
+
+// websocket
+const http = require('http').createServer(app);
+const io = require('socket.io')(http);
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  next();
+});
+http.listen(SOCKET_PORT, () => {
+  console.log(`listening on *:${SOCKET_PORT}`);
+});
+io.on('connection', (socket) => {
+  console.log(`new client connected: ${socket.id}`);
+  socket.on('send-message', message => {
+    console.log(message);
+    io.emit('message', message);
+  });
+});
 
 
 // Routers
