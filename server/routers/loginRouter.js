@@ -20,7 +20,7 @@ loginRouter.post(
   loginController.login,
   loginController.setCookie,
   (req, res) => {
-    res.status(200).json(res.locals.addedUser);
+    res.status(200).json(res.locals.authentication);
   }
 );
 

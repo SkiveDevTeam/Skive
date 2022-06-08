@@ -9,7 +9,7 @@ function Signup (props) {
 
   const signupUser = () => {
     console.log(username, password);
-    fetch('/signup', {
+    fetch('/login/signup', {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ function Signup (props) {
         .then((response) => response.json())
         .then((data) => {
           console.log('Successful login:', data);
-          localStorage.setItem('userId', data.data);
+          localStorage.setItem('userId', data.username);
           navigate('/chatroom');
         })
         .catch((error) => {

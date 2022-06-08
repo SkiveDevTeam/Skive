@@ -1,3 +1,3 @@
 export const LOGIN = 'LOGIN'
 export const SIGNOUT = 'SIGNOUT'
-export const NEW_MESSAGE = 'NEW_MESSAGE'
+export const NEW_MESSAGES = 'NEW_MESSAGES'
