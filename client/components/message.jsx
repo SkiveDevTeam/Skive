@@ -9,7 +9,7 @@ const Message = ({index, msg, username}) => {
   return (
     <>
       <li key={index}>
-        {username}: {msg}
+        <span style={{color: 'lightblue', marginRight: '10px'}}>{username}:</span> {msg}
       </li>
     </>
   );
