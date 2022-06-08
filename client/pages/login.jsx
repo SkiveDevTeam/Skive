@@ -10,7 +10,7 @@ function Login() {
 
   const login = () => {
     console.log(username, password);
-      fetch('/signup', {
+      fetch('/login', {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
@@ -22,8 +22,8 @@ function Login() {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log('Successful signup:', data);
-          localStorage.setItem('userId', data.data);
+          console.log('Successful login:', data);
+          localStorage.setItem('userId', data.username);
           navigate('/chatroom');
         })
         .catch((error) => {

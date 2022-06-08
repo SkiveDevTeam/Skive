@@ -10,12 +10,13 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, '../index.html')));
 
+
 // Routers
 const loginRouter = require('./routers/loginRouter');
 const messageRouter = require('./routers/messageRouter');
 
 app.use('/login', loginRouter);
-app.use('/message', messageRouter);
+app.use('/messages', messageRouter);
 
 // 404 error handler
 app.use('*', (req, res) => res.status(404).send('Page does not exist'));

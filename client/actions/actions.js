@@ -8,6 +8,7 @@ export const clientSignout = () => ({
     type: types.SIGNOUT,
 });
 
-export const newMessages = () => ({
-    type: types.NEW_MESSAGE,
+export const newMessages = (messages) => ({
+    type: types.NEW_MESSAGES,
+    payload: messages,
 })

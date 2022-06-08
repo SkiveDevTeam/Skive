@@ -1,34 +1,48 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Message from './message.jsx';
 import { useDispatch, useSelector } from 'react-redux';
+import * as types from '../actions/constants.js';
 
 
 const Display = () => {
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  const getMessages = () => {
     fetch('/messages')
       .then(response => response.json())
-      .then(messages => dispatchEvent({
-        types: types.NEW_MESSAGES,
+      .then(messages => {
+        // console.log('in fetch:', messages);
+        dispatch({
+        type: types.NEW_MESSAGES,
         payload: messages
-      }))
+      });
+    })
+  }
+  
+  useEffect(() => {
+    // console.log('in useEffect');
+    // setInterval(getMessages, 5000);
+    getMessages()
   }, []);
 
   const messages = useSelector(
-    state => state.messages
+    state => {
+      // console.log('state:', state)
+      return state.reducers.messages.messages
+    } 
   );
 
-  const box = [];
 
-  for (let i = 0; i < messages.length; i++) {
-    // { dataPoints } = messages[i];
-    // box.push(<Message key={i} ...></>)
+// console.log('messages:', messages)
+  const boxes = [];
+  for (let i = messages.length - 1; i > 0; i--) {
+    const { message, username } = messages[i];
+    boxes.push(<Message key={'message:' + i} index={i} msg={message} username={username}/>)
   }
 
   return (
-    <div> hello </div>
+    <ul> {boxes} </ul>
   );
 }
 

@@ -1,8 +1,9 @@
 // backend
 // create pool allowing use of queries to access db
 const { Pool } = require('pg');
-const PG_URI =
-  'postgres://rsoalomp:prXdAkZfDwrL1mlZf4qbmbyQKx6Nv0-g@queenie.db.elephantsql.com/rsoalomp';
+
+// const PG_URI = process.env.PG_URI;
+const PG_URI = 'postgres://rsoalomp:prXdAkZfDwrL1mlZf4qbmbyQKx6Nv0-g@queenie.db.elephantsql.com/rsoalomp';
 
 // initate new pool
 const pool = new Pool({

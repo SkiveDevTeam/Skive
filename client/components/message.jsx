@@ -2,12 +2,16 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 
-const Message = () => {
-  useEffect(() => {
+const Message = ({index, msg, username}) => {
+  // useEffect(() => {
 
-  });
+  // });
   return (
-    <div> hello from message </div>
+    <>
+      <li key={index}>
+        {username}: {msg}
+      </li>
+    </>
   );
 }
 
