@@ -24,7 +24,7 @@ messageController.addMessage = (req, res, next) => {
 };
 
 messageController.getMessages = (req, res, next) => {
-  db.query('SELECT * FROM messages ORDER BY created_at DESC LIMIT 50')
+  db.query('SELECT * FROM messages ORDER BY created_at DESC LIMIT 30')
     .then((data) => {
       console.log(data);
       res.locals.messages = data.rows;

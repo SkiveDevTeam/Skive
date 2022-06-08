@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import Message from './message.jsx';
 import ioClient from "socket.io-client";
 import { Box, Button } from '@mui/material';
+import sloth from '../assets/skive-sloth-icon.png';
 const SERVER = 3036;
 let socket;
 
@@ -47,7 +48,9 @@ const Display = () => {
 
   return (
     <div>
-      <ul id='list'> {messages} </ul>
+      <h1 id='Login'> Skive</h1>
+      <img style={{ width: '30%' }} src={sloth} alt='logo' />
+      <ul style={{ listStyleType: 'none', padding: '0' }} id='list'> {messages} </ul>
       <div>
         <input
           id='inputBox'

@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const Message = ({ index, message, username }) => {
 
   return (
     <>
       <li key={index}>
-        {username}: {message}
+        <span style={{ color: 'lightblue', marginRight: '10px' }}>{username}:</span> {message}
       </li>
     </>
   );
