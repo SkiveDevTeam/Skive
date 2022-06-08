@@ -20,6 +20,19 @@
 
 /**
  * @license React
+<<<<<<< HEAD
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+=======
+>>>>>>> 2faf366675ba53cdfdae08d26cc65fd023bc7c62
  * react.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -58,6 +71,26 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+<<<<<<< HEAD
+/**
+ * React Router v6.3.0
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+/** @license MUI v5.8.0
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+=======
+>>>>>>> 2faf366675ba53cdfdae08d26cc65fd023bc7c62
 /** @license React v16.13.1
  * react-is.production.min.js
  *

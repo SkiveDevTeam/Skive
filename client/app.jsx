@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
-// import MainContainer from './containers/MainContainer.jsx';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Chatroom from './pages/chatroom.jsx';
+import Login from './pages/login.jsx';
+import Signup from './pages/signup.jsx';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <h2> hello</h2>
-      </div>
+     <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Login />}/>
+          <Route path='/signup' element={<Signup />}/>
+          <Route path='/chatroom' element={<Chatroom />}/>
+        </Routes>
+     </BrowserRouter>
     );
   }
 }
