@@ -12,50 +12,50 @@ function Login() {
 
   const login = () => {
     console.log(username, password);
-      fetch('/login', {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          username: username,
-          password: password,
-        }),
+    fetch('/login', {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username: username,
+        password: password,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Successful login:', data);
+        localStorage.setItem('userId', data.username);
+        navigate('/chatroom');
       })
-        .then((response) => response.json())
-        .then((data) => {
-          console.log('Successful login:', data);
-          localStorage.setItem('userId', data.username);
-          navigate('/chatroom');
-        })
-        .catch((error) => {
+      .catch((error) => {
         console.log('Error: ', error);
-        });
+      });
   };
 
   return (
-    <Container style={{border:'2px solid black', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', borderRadius: '12%'}} maxWidth='sm'>
+    <Container style={{ border: '2px solid black', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', borderRadius: '12%' }} maxWidth='sm'>
       <h1 id='Login'> Welcome to Skive</h1>
-      <img style={{width: '30%'}} src={sloth} alt='logo'/>
+      <img style={{ width: '30%' }} src={sloth} alt='logo' />
       <br></br>
       <br></br>
       <br></br>
       {error !== null && error}
-      <Box  style={{width: '60%' }} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+      <Box style={{ width: '60%' }} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <TextField
-          style={{width: '100%'}}
+          style={{ width: '100%' }}
           size='small'
           className='signin'
           type='text'
           placeholder='Username'
-        //   sx={{ mr: 5 }}
+          //   sx={{ mr: 5 }}
           onChange={(e) => {
             setUsername(e.target.value);
           }}
         />{' '}
         <br></br>
         <TextField
-          style={{width: '100%'}}
+          style={{ width: '100%' }}
           size='small'
           className='signin'
           type='password'
@@ -66,9 +66,9 @@ function Login() {
         />{' '}
       </Box>
       <br></br>
-      <Button      
-        style={{width: '60%',  background:'black'}}
-        onClick={login} 
+      <Button
+        style={{ width: '60%', background: 'black' }}
+        onClick={login}
         variant='contained'>
         {' '}
         Log In

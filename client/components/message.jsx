@@ -1,15 +1,11 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
 
+const Message = ({ index, message, username }) => {
 
-const Message = ({index, msg, username}) => {
-  // useEffect(() => {
-
-  // });
   return (
     <>
       <li key={index}>
-        <span style={{color: 'lightblue', marginRight: '10px'}}>{username}:</span> {msg}
+        <span style={{ color: 'lightblue', marginRight: '10px' }}>{username}:</span> {message}
       </li>
     </>
   );
