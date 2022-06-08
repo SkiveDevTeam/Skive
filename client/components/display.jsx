@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Message from './message.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import * as types from '../actions/constants.js';
-
+import sloth from '../assets/skive-sloth-icon.png';
 
 const Display = () => {
 
@@ -42,7 +42,13 @@ const Display = () => {
   }
 
   return (
-    <ul> {boxes} </ul>
+    <>
+      <h1 id='Login'> Skive</h1>
+      <img style={{width: '30%'}} src={sloth} alt='logo'/>
+      <br></br>
+      <br></br>
+      <ul style={{listStyleType: 'none', padding: '0'}}> {boxes} </ul>
+    </>
   );
 }
 

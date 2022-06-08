@@ -42,6 +42,7 @@ const Input = () => {
 
         <Button 
             onClick={postMessage} 
+            style={{background: 'black', marginLeft: '15px'}}
             variant='contained'>
             {' '}
             submit

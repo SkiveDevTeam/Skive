@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { TextField, Container, Box, Button } from '@mui/material';
-
+import sleepySloth from '../assets/skive-sleepy-sloth.png';
 function Signup (props) {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
@@ -31,22 +31,27 @@ function Signup (props) {
   };
 
   return (
-    <Container maxWidth='sm'>
-      <h1 id='Signup'> Signup</h1>
-      <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
+    <Container style={{border:'2px solid black', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', borderRadius: '12%'}} maxWidth='sm'>
+      <h1 id='Signup'> Signup for Skive </h1>
+      <img style={{width: '70%'}} src={sleepySloth} alt='logo'/>
+      <br></br>
+      <br></br>
+      <Box style={{width: '60%' }} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
         <TextField
+          style={{width: '100%'}}
           size='small'
           className='signin'
           type='text'
           placeholder='Username'
           margin='dense'
-          sx={{ mr: 5 }}
+        //   sx={{ mr: 5 }}
           onChange={(e) => {
             setUsername(e.target.value);
           }}
         />{' '}
         <br></br>
         <TextField
+          style={{width: '100%'}}
           size='small'
           margin='dense'
           className='signin'
@@ -59,7 +64,10 @@ function Signup (props) {
         />
       </Box>
       <br></br>
-      <Button onClick={signupUser} variant='contained'>
+      <Button 
+        style={{width: '60%',  background:'black'}} 
+        onClick={signupUser} 
+        variant='contained'>
         Sign up
       </Button>
       <p>
