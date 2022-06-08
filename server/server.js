@@ -8,8 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(express.static(path.join(__dirname, '../index.html')))
-
+app.use(express.static(path.resolve(__dirname, '../build')))
 
 // 404 error handler
 app.use('*', (req, res) =>

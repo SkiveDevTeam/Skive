@@ -1,8 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
+import messageReducer from './reducers/messageReducer.js';
+import userReducer from './reducers/userReducer.js';
+import reducers from './reducers/index.js';
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
-    message: messageReducer,
-    user: userReducer,
+    reducers,
   },
 })
+
+export default store;
